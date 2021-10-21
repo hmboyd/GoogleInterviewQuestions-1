@@ -1,13 +1,35 @@
 package com.robertocannella;
 
-import com.sun.jdi.request.StepRequest;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.stream.Stream;
+import java.util.*;
 
 public class InterviewProcess {
+    public static int oddEvenJumps(int[] arr) {
+        int n  = arr.length;
+        int result = 1;
+
+        boolean[] higher = new boolean[n];
+        boolean[]lower = new boolean[n];
+
+        higher[n - 1] = lower[n - 1] = true;
+
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+
+        map.put(arr[n - 1], n - 1);
+        for (int i = n - 2; i >= 0; --i) {
+            Map.Entry<Integer, Integer> hi = map.ceilingEntry(arr[i]);
+            Map.Entry<Integer, Integer> lo = map.floorEntry(arr[i]);
+            if (hi != null)
+                higher[i] = lower[hi.getValue()];
+            if (lo != null)
+                lower[i] = higher[lo.getValue()];
+            if (higher[i])
+                result++;
+
+            map.put(arr[i], i);
+        }
+        return result;
+    }
     public static int numUniqueEmails(String[] emails) {
         //hashset to hold unique email address
         Set<String> emailSet = new HashSet<>();
@@ -20,7 +42,7 @@ public class InterviewProcess {
                 if (c == '+' || c == '@') break;
                 sb.append(c);
             }
-            //get domain name and append to latest local name
+            //get domain name and append to the latest local name
             sb.append(email.substring(email.indexOf("@")));
             //add unique email id to set- to avoid duplicates
             emailSet.add(sb.toString());
