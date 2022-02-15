@@ -5,6 +5,10 @@ import java.util.*;
 
 public class InterviewProcess {
     public static int oddEvenJumps(int[] arr) {
+    // [1,2,3,4,5,6,7]
+        //
+        // odd
+        // even
         int n  = arr.length;
         int result = 1;
 
