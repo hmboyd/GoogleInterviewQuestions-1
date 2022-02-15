@@ -4,7 +4,19 @@ package com.robertocannella;
 import java.util.*;
 
 class Solution {
+        public static int[] sortedSquares(int[] nums) {
+            // Given an integer array nums sorted in non-decreasing order,
+            // return an array of the squares of each number sorted in non-decreasing order.
+            // Naive Solution
+            for (int i = 0; i < nums.length; i++) {
+                nums[i] = nums[i]*nums[i];
+            }
 
+            Arrays.sort(nums);
+            return nums;
+
+            // Comp
+        }
         public static int findNumbers(int[] nums) {
             // EASY
             // Given an array nums of integers, return how many of them contain an even number of digits.
@@ -47,9 +59,9 @@ class Solution {
             //System.out.println(arr[i]); // printing each array element
         }
         //int [] array = {0,2,2,1,1};
-        int[] array = {12,345,2,6,7896};
+        int[] array = {-4,-1,0,3,10};
         //int[] array = {3,6,3,8,431,0,-3,3,10,3,90,89,-45,-90};
-        int result = Solution.findNumbers(array);
-        System.out.println(result);
+        int[] result = Solution.sortedSquares(array);
+        System.out.println(Arrays.toString(result));
     }
 }
