@@ -3,6 +3,7 @@ package com.robertocannella;
 // Given an integer array nums sorted in non-decreasing order,
 // return an array of the squares of each number sorted in non-decreasing order.
 // https://leetcode.com/problems/squares-of-a-sorted-array/solution/
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -36,6 +37,8 @@ public class SortedSquares {
                 left++;
             }
             result[i] = square * square;
+            System.out.println(Arrays.toString(result));
+            System.out.println("loop");
         }
         return result;
     }

@@ -1,7 +1,7 @@
 package com.robertocannella;
 // Given a fixed-length integer array arr, duplicate each occurrence of zero,
 // shifting the remaining elements to the right.
-public class DupicateZeros {
+class DuplicateZeros {
     public static void approachOne(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == 0) {
