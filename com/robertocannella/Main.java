@@ -11,16 +11,20 @@ public class Main {
         //int n = 100;
 
         //int[] nums1 = getRandomArray(0,50, n );
-        int[] nums = {3,3,3,3,3,4,4,4,4,4,4,5,5,5,5,2,2,2,1,1,3,3,3,3,5,5,5,6,6,6,7,7,7,8,8,8,9,9,9,4,4,4,2,2,11,1};
-        Arrays.sort((nums));
+        //int[] nums = {1,2,3,5,7,9,10,12,14,15,16,18,14,13};
+        //int[] nums = {1,1,1,1,1,1,1,2,1};
+        //int[] nums = {1,2,3,4,3,2,1};
+        //int[] nums = {0,2,3,3,5,2,1,0};
+        //int[] nums = {17,18,5,4,6,1};
+        int[] nums = {0,1,0,1,0,1,0,1,0,1};
         //int val = 3;
 
        System.out.println(Arrays.toString(nums));
 
-        var k = RemoveDuplicates.removeDuplicates(nums);
+       MoveZeros.moveZeroes(nums);
 
        // System.out.println(Arrays.toString(nums1));
-        System.out.println("j: " + k);
+       // System.out.println("res: " + Arrays.toString(res));
 
     }
 
